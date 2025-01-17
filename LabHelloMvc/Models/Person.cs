@@ -1,4 +1,6 @@
-﻿namespace LabHelloMvc.Models
+﻿
+
+namespace LabHelloMvc.Models
 {
     public class Person
     {

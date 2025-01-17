@@ -19,28 +19,41 @@ namespace LabHelloMvc.Controllers
             //List<Person> people = new List<Person>();
 
             // Create person objects
-            Person Person1 = new Person();
+            Person Person1 = new Person()
             {
-                Person1.PersonId = 1;
-                Person1.FirstName = "Hiren";
-                Person1.LastName = "Gajjar";
-                Person1.PhoneNumber = 902222807;
-                Person1.Email = "cs.hirengajjar@gmail.com";
-            }
+                PersonId = 1,
+                FirstName = "Hiren",
+                LastName = "Gajjar",
+                PhoneNumber = 902222807,
+                Email = "cs.hirengajjar@gmail.com"
+            };
 
             //Person.Add(Person1);
             return View(Person1);
         }
 
+        // Display a person by id - ../home/DisplayPerson/id
+
+        public IActionResult DisplayPerson(int id)
+        {
+            // Create a new Person object
+            Person Person1 = new Person()
+            {
+                PersonId = id,
+                FirstName = "Rajendra",
+                LastName = "Gajjar",
+                PhoneNumber = 942830418,
+                Email = "raj.mahindra@gmail.com"
+            };
+
+            return View(Person1);
+        }
+
+        // Privacy Page - ../Home/Privacy/
         public IActionResult Privacy()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
